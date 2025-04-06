@@ -1,0 +1,467 @@
+:root {
+    --primary-color: #c2c2c2;
+    --secondary-color: #2b2b2b;
+    --dark-bg: #333;
+    --darker-bg: #000;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(rgba(51, 51, 51, 0.97), rgba(51, 51, 51, 0.97)),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.05'/%3E%3Cpath d='M0 30L60 30' stroke='%23ffffff' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/svg%3E");
+    background-size: 30px 30px;
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar customization */
+.navbar {
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, var(--darker-bg), #1a1a1a) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced active state */
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Cards and content sections */
+.card {
+    background-color: var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.2), transparent);
+    pointer-events: none;
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--darker-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(194, 194, 194, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--darker-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(194, 194, 194, 0.2);
+}
+
+/* Service items */
+.service-item {
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, var(--darker-bg), #1a1a1a);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 0;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+} 
+
+/* Add these new styles */
+.hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 4rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card .bi {
+    transition: all 0.3s ease;
+}
+
+.card:hover .bi {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.display-1 {
+    color: var(--primary-color);
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--darker-bg), var(--secondary-color));
+    border: none;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+}
+
+/* Enhanced animations */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.bi {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .bi {
+    transform: scale(1.1);
+}
+
+/* Service page specific styles */
+.card .bi {
+    color: var(--primary-color);
+    opacity: 0.9;
+}
+
+.card:hover .bi {
+    opacity: 1;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 4rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+} 
+
+/* About page specific styles */
+.feature-item {
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-item:hover i {
+    color: #fff;
+}
+
+/* Contact page specific styles */
+.contact-person, .contact-address {
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-person:hover, .contact-address:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-person a, .contact-address a {
+    transition: opacity 0.3s ease;
+}
+
+.contact-person a:hover, .contact-address a:hover {
+    opacity: 0.8;
+}
+
+/* Enhanced card styles for contact page */
+.card .display-6 {
+    color: var(--primary-color);
+}
+
+.list-unstyled li {
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.list-unstyled li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Button hover effects */
+.btn-outline-light:hover {
+    background-color: var(--primary-color);
+    color: var(--darker-bg);
+}
+
+/* Footer and general text alignment */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Center all card text */
+.card-body {
+    text-align: center;
+}
+
+/* Center all paragraphs in cards */
+.card p {
+    text-align: center;
+}
+
+/* Founder page specific styles */
+.biography-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.biography-section .h4 {
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.biography-section p {
+    line-height: 1.8;
+}
+
+/* Active nav link styling */
+.nav-link.active {
+    color: #fff !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+h1, h2, h3, .display-4 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-title {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Improved spacing */
+.container {
+    padding: 2rem 1rem;
+}
+
+/* Better section spacing */
+section {
+    margin: 4rem 0;
+}
+
+/* Enhanced list spacing in cards */
+.card-body ul {
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* Improved paragraph spacing */
+p {
+    margin-bottom: 1.2rem;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin: 3rem 0;
+    opacity: 0.2;
+}
+
+.bi {
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(194, 194, 194, 0.25);
+    color: #fff;
+}
+
+.container {
+    border-radius: 10px;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.display-4, .display-3 {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+}
+
+.btn {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--darker-bg), var(--secondary-color));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
